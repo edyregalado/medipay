@@ -8,6 +8,11 @@ import CheckoutForm from "../components/CheckoutForm";
 import getPrice from "../utils/get-price";
 import LogoBar from "../components/prebuilt/LogoBar";
 
+import "../styles/globals.css";
+import awsExports from "../src/aws-exports";
+
+Amplify.configure({...awsExports, ssr: true });
+
 const MainPage = props => {
 
   return (
