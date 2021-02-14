@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-medipay-dev-194137-authRole",
+      "UnauthRoleArn": "arn:aws:iam::028687936071:role/amplify-medipay-dev-194137-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::028687936071:role/amplify-medipay-dev-194137-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-medipay-dev-194137-deployment",
+      "UnauthRoleName": "amplify-medipay-dev-194137-unauthRole",
+      "StackName": "amplify-medipay-dev-194137",
+      "StackId": "arn:aws:cloudformation:us-west-2:028687936071:stack/amplify-medipay-dev-194137/cc4442f0-6e65-11eb-b451-0a5dfebd7057",
+      "AmplifyAppId": "d3baaxmuqxga56"
+    }
+  }
+}
