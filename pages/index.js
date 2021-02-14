@@ -3,27 +3,21 @@ import Router from "next/router";
 
 import Layout from "../components/Layout";
 import Row from "../components/prebuilt/Row";
-import DonutShop from "../components/prebuilt/DonutShop";
+import DrShop from "../components/prebuilt/DrShop";
 import CheckoutForm from "../components/CheckoutForm";
-import getDonutPrice from "../utils/get-donut-price";
+import getPrice from "../utils/get-price";
+import LogoBar from "../components/prebuilt/LogoBar";
 
 const MainPage = props => {
-  const [numDonuts, setNumDonuts] = useState(1);
-
-  const addDonut = () => setNumDonuts(num => Math.min(12, num + 1));
-  const remDonut = () => setNumDonuts(num => Math.max(1, num - 1));
 
   return (
     <Layout title="Medipay">
+      <LogoBar/>
       <Row>
-        <DonutShop
-          onAddDonut={addDonut}
-          onRemoveDonut={remDonut}
-          numDonuts={numDonuts}
-        />
+        <DrShop/>
       </Row>
       <CheckoutForm
-        price={getDonutPrice(numDonuts)}
+        price={getPrice}
         onSuccessfulCheckout={() => Router.push("/success")}
       />
     </Layout>

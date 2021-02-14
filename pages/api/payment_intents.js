@@ -17,7 +17,7 @@ export default async (req, res) => {
         amount,
         currency: "usd",
         transfer_data: {
-          destination: "acct_1IIOziRPowS0Q7WY",
+          destination: "acct_1IISlERRFC32YJQq",
         }
       });
 
