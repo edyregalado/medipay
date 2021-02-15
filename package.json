@@ -14,12 +14,19 @@
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.8.0",
     "axios": "^0.21.1",
+    "baileys": "^1.1.1",
+    "fs": "0.0.1-security",
     "material-ui-icons": "^1.0.0-beta.36",
+    "mysql": "^2.18.1",
     "next": "^10.0.4",
+    "next-compose-plugins": "^2.2.1",
+    "next-images": "^1.7.0",
     "react": "^16.13.1",
     "react-confetti": "^5.1.0",
     "react-dom": "^16.13.1",
-    "stripe": "^8.76.0"
+    "react-helmet": "^6.1.0",
+    "stripe": "^8.76.0",
+    "twilio": "^3.56.0"
   },
   "license": "MIT",
   "devDependencies": {
