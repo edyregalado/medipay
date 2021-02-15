@@ -79,9 +79,8 @@ const DrSingleShop = () => {
   return (
     <Shop>
       <DrName>Dr. Black Swan</DrName>
-      <Details>{completeDateStamp}</Details>
-      <Ticket>Ticket</Ticket>
       <AppointmentName>Anticipo de Cita</AppointmentName>
+      <Details>{completeDateStamp}</Details>
     </Shop>
   );
 };

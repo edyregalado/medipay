@@ -1,9 +1,9 @@
 // Download the helper library from https://www.twilio.com/docs/node/install
 // Your Account Sid and Auth Token from twilio.com/console
 // and set the environment variables. See http://twil.io/secure
-const accountSid = process.env.NEXT_PUBLIC_TWILIO_ACCOUNT_SID;
-const authToken = process.env.NEXT_PUBLIC_TWILIO_AUTH_TOKEN;
-const client = require('twilio')(accountSid, authToken);
+// const accountSid = process.env.NEXT_PUBLIC_TWILIO_ACCOUNT_SID;
+// const authToken = process.env.NEXT_PUBLIC_TWILIO_AUTH_TOKEN;
+// const client = require('twilio')(accountSid, authToken);
 
 // export default async (req, res) => {
 //   if (req.method === "POST") {
@@ -35,37 +35,3 @@ const client = require('twilio')(accountSid, authToken);
 //       //  })
 //       // .then(message => console.log(message.sid));
 
-//       res.status(200).send(message.sid);
-//     } catch (err) {
-//       res.status(500).json({ statusCode: 500, message: err.message });
-//     }
-//   } else {
-//     res.setHeader("Allow", "POST");
-//     res.status(405).end("Method Not Allowed");
-//   }
-// };
-
-const WhatsAppWeb = require('baileys')
-
-const client = new WhatsAppWeb() 
-
-// CONECTA WHATS - SERVIDOR
-module.exports.conectApi = async (req, res) => {
-        client.connect()
-        .then (([user, chats, contacts, unread]) => {
-            res.jsonp({mensaje: 'Autenticación exitosa'});
-        })
-        .catch (err => console.log(err) )
-}
-
-
-// ENVIAR MENSAJES
-
-module.exports.sendMessage = async (req, res) => {
-    options = {
-        quoted: null,
-        timestamp: new Date()
-    }
-    client.sendTextMessage(`${req.body.phone}@s.whatsapp.net`, req.body.body, options)
-    .then( res.jsonp({mensaje:'Notificación enviada'}))
-}
