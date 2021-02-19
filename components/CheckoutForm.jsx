@@ -40,6 +40,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
     const billingDetails = {
       name: ev.target.name.value,
       email: ev.target.email.value,
+      phone: ev.target.phone.value,
       address: {
         postal_code: ev.target.zip.value
       }
@@ -75,7 +76,16 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
         setProcessingTo(false);
         return;
       }
+      
+      console.log("Detalles:" + billingDetails.name);
 
+      try{
+          const message = await axios.post("/api/message_intents", {
+          billingDetails
+        });
+      } catch (err) {
+        console.log("Twilio error: " + err.message);
+      }
       onSuccessfulCheckout();
     } catch (err) {
       setCheckoutError(err.message);
@@ -96,16 +106,16 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
   const iframeStyles = {
     base: {
-      color: "#fff",
+      color: "#00000",
       fontSize: "16px",
-      iconColor: "#fff",
+      iconColor: "#0000",
       "::placeholder": {
-        color: "#87bbfd"
+        color: "#000000"
       }
     },
     invalid: {
-      iconColor: "#FFC7EE",
-      color: "#FFC7EE"
+      iconColor: "#D98A41",
+      color: "#D98A41"
     },
     complete: {
       iconColor: "#cbf4c9"

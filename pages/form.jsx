@@ -1,29 +1,21 @@
 import styled from "@emotion/styled";
 import Confetti from "react-confetti";
 import { useState, useEffect } from "react";
+
 import Layout from "../components/Layout";
 import Row from "../components/prebuilt/Row";
-import { Grid, Typography, Card, CardContent, Paper } from '@material-ui/core';
 import { makeStyles, withTheme } from '@material-ui/core/styles';
+import { Typography } from "@material-ui/core";
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
     position: 'absolute',
     left: '50%',
     top: '50%',
-  },
-  text: {
-    fontSize: 18,
-    color: "black",
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 22,
-  },
-  paper: ¨
+  }
 }));
-
 
 const Container = styled.div`
   width: 475px;
@@ -57,24 +49,16 @@ export default () => {
   });
 
   return (
-    <div className={classes.root}>
-      <Layout title="Listo!">
-        <Confetti width={width} height={height}/>
-        <Paper elevation={3}>
-          <Typography className={classes.text}>
-            Medipay ha procesado tu pago.
-          </Typography>
-          <Typography className={classes.title}>
-            ¡Felicidades!
-          </Typography>
-        </Paper>
-
-        {/* <Container className={classes.root}>
-          <Confetti width={width} height={height}/>
-          <Title>¡Felicidades!</Title>
-          <Message>Medipay ha procesado tu pago.</Message>
-        </Container> */}
-      </Layout>
+    <div>
+      <Grid container spacing={3} alignItems="flex-start" direction="row" justify="center">
+        <Grid item xs={12} md ={6}>
+          <Paper>
+            <Typography>
+              Dr. Eduardo Regalado
+            </Typography>
+          </Paper>
+        </Grid>
+      </Grid>
     </div>
   );
 };

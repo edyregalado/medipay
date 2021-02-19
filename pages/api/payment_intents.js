@@ -21,6 +21,18 @@ export default async (req, res) => {
         }
       });
 
+      // const accountSid = process.env.NEXT_PUBLIC_TWILIO_ACCOUNT_SID;
+      // const authToken = process.env.NEXT_PUBLIC_TWILIO_AUTH_TOKEN;
+      // const client = require('twilio')(accountSid, authToken);
+      // client.messages
+      // .create({
+      //    from: 'whatsapp:+523338427308',
+      //    body: 'Hello from Medipay',
+      //    to: billingDetails.phone
+      //  })
+      // .then(message => console.log(message.sid));
+
+
       res.status(200).send(paymentIntent.client_secret);
     } catch (err) {
       res.status(500).json({ statusCode: 500, message: err.message });
