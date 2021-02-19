@@ -45,35 +45,17 @@ margin-bottom: auto;
 text-align: left;
 `;
 
-var today = new Date();
-var options = { day: 'numeric',
+const today = new Date();
+const options = { day: 'numeric',
                 month: 'short'};
-var date = today.toLocaleDateString('es-ES', options);
-var day = today.toLocaleDateString('es-ES', {weekday: 'long'})
+const date = today.toLocaleDateString('es-ES', options);
+const day = today.toLocaleDateString('es-ES', {weekday: 'long'})
 
 const hourOptions = { hour: 'numeric', minute: 'numeric'};
-// const hour = today.toLocaleDateString('es-ES', hourOptions);
-
-var dateWithouthSecond = new Date();
-// const hour = dateWithouthSecond.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
+const dateWithouthSecond = new Date();
 const hour = dateWithouthSecond.toLocaleTimeString('es-ES', {hour: '2-digit', minute:'2-digit'});
 
 const completeDateStamp = hour + ", " + date + ", " + day;
-console.log(completeDateStamp);
-
-// function prettyHour(time){
-//   var date = new Date(parseInt(time));
-//   var localeSpecificTime = date.toLocaleTimeString();
-//   return localeSpecificTime.replace(/:\d+ /, ' ');
-// }
-
-// var date = new Date();
-// var minute = date.getMinutes();
-// var hour = date.getHours();
-// var day = date.getDate();
-// var month = new Date().getMonth()         // Get the month (0-11);
-// var year = date.getFullYear();
-// alert([minute, hour, day, month, year].join("\n"));
 
 const DrSingleShop = () => {
   return (
