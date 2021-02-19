@@ -20,8 +20,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontWeight: 'bold',
     fontSize: 22,
-  },
-  paper: ¨
+  }
 }));
 
 
