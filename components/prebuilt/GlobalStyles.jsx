@@ -27,7 +27,7 @@ const GlobalStyles = () => (
       styles={css`
         body,
         html {
-          background-color: #F9F9FE;
+          background-color: #F9F9FF;
           font-size: 18px;
           font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
         }

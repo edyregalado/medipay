@@ -12,6 +12,11 @@ const CardElementContainer = styled.div`
   height: 40px;
   display: flex;
   align-items: center;
+  // padding: 10px 20px 20px 20px;
+  background-color: black;
+  color: #FFFF;
+  font-weight: bold;
+  border-radius: 20px;
 
   & .StripeElement {
     width: 100%;
@@ -106,12 +111,12 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
   const iframeStyles = {
     base: {
-      color: "#00000",
+      color: "#FFFF",
       fontSize: "16px",
       iconColor: "#0000",
       "::placeholder": {
-        color: "#000000"
-      }
+        color: "#FFFF"
+      },
     },
     invalid: {
       iconColor: "#D98A41",
@@ -125,7 +130,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const cardElementOpts = {
     iconStyle: "solid",
     style: iframeStyles,
-    hidePostalCode: true
+    hidePostalCode: true,
   };
 
   return (
