@@ -28,11 +28,16 @@ const Container = styled.div`
   width: 475px;
   // margin: 30px auto 0 auto;
   text-align: center;
-  background-color: #ffff;
-  color: black;
-  margin: auto;
-  width: 50%;
+  /* background-color: #ffff; */
+  color: white;
+  margin: 13% auto;
+  width: 40%;
   padding-top: 200px;
+  border-radius: 25px;
+  background: #B765D2;
+  padding: 30px;
+  height: 50%px;
+  box-shadow: 1px 1px #242424;
 `;
 const Title = styled.div`
   font-size: 58px;
@@ -43,7 +48,7 @@ const Message = styled.div`
   font-size: 27px;
 `;
 
-export default () => {
+const Success = (props) => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   const classes = useStyles();
@@ -59,21 +64,17 @@ export default () => {
     <div className={classes.root}>
       <Layout title="Listo!">
         <Confetti width={width} height={height}/>
-        <Paper elevation={3}>
-          <Typography className={classes.text}>
+        <Container>
+          <Message className={classes.text}>
             Medipay ha procesado tu pago.
-          </Typography>
-          <Typography className={classes.title}>
+          </Message>
+          <Title className={classes.title}>
             ¡Felicidades!
-          </Typography>
-        </Paper>
-
-        {/* <Container className={classes.root}>
-          <Confetti width={width} height={height}/>
-          <Title>¡Felicidades!</Title>
-          <Message>Medipay ha procesado tu pago.</Message>
-        </Container> */}
+          </Title>
+        </Container>
       </Layout>
     </div>
   );
 };
+
+export default Success;
