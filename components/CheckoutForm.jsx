@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import styled from "@emotion/styled";
 import axios from "axios";
@@ -40,7 +40,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   };
 
   const handleFormSubmit = async ev => {
-    ev.preventDefault();
+    ev.preventDefault(); // The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
 
     const billingDetails = {
       name: ev.target.name.value,
@@ -81,16 +81,48 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
         setProcessingTo(false);
         return;
       }
-      
-      console.log("Detalles:" + billingDetails.name);
+    const newPatient = {
+      Patient_Name: billingDetails.name,
+      Patient_phone_number: billingDetails.phone,
+      email: billingDetails.name,
+      CP: billingDetails.address.postal_code,
+      Amount: price
+    }
+    console.log(newPatient);
+    // const resultPatient = await axios({
+    //   method: 'post',
+    //   url: "/api/strapi_save_intent",
+    //   data: newPatient
+    // });
+    // console.log(resultPatient);
+    const res = await axios.post('/api/strapi_save_intent', {
+        Patient_Name: billingDetails.name,
+        Patient_phone_number: billingDetails.phone,
+        email: billingDetails.name,
+        CP: billingDetails.address.postal_code,
+        Amount: price
+    });
+  
+      // const result = await res.json()
+      // result.user => 'Ada Lovelace'
+      // useEffect(() => {
 
-      try{
-          const message = await axios.post("/api/message_intents", {
-          billingDetails
-        });
-      } catch (err) {
-        console.log("Twilio error: " + err.message);
-      }
+      
+      // Call API
+      // const postPatients = async () => {
+      //   const result = await axios({
+      //     method: 'post',
+      //     url: 'http://localhost:1337/patients',
+      //     data: newPatient
+      //   });
+      //   // const result = await axios.post('http://localhost:1337/patients');
+      //   // setPatients(result.data);
+      //   // setFiltered(result.data);
+      //   console.log(result.data);
+      // }
+      // postPatients();
+      // }, []); //arreglo vacío para que solo se llame una vez
+
       onSuccessfulCheckout();
     } catch (err) {
       setCheckoutError(err.message);

@@ -4,16 +4,16 @@ const Shop = styled.div`
   padding: 10px 20px 20px 20px;
   background-color: black;
   color: #FFFF;
-  font-weight: bold;
+  /* font-weight: bold; */
   border-radius: 20px;
 `;
 
 const DrName = styled.h1`
-  font-size: 24px;
-  font-style: bold;
+  font-size: 16px;
+  /* font-style: bold; */
   font-variant: normal;
-  font-weight: bold;
-  line-height: 24px;
+  /* font-weight: bold; */
+  /* line-height: 24px; */
   margin-bottom: auto;
   text-align: center;
 `;
