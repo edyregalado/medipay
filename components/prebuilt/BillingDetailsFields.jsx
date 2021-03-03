@@ -19,18 +19,18 @@ const BillingDetailsFields = () => {
       />
       <FormField
         name="phone"
-        label="Celular"
+        label="Whatsapp"
         type="text"
         placeholder="+523338427308"
         required
       />
-      <FormField
+      {/* <FormField
         name="address"
         label="Domicilio"
         type="text"
         placeholder="De las gardenias 540"
         required
-      />
+      /> */}
       <FormField
         name="zip"
         label="CP"

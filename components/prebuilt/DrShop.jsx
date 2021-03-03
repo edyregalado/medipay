@@ -2,17 +2,32 @@ import styled from "@emotion/styled";
 
 const Shop = styled.div`
   padding: 10px 20px 20px 20px;
+  background-color: black;
+  color: #FFFF;
+  /* font-weight: bold; */
+  border-radius: 20px;
 `;
 
 const DrName = styled.h1`
-  font-size: 24px;
+  font-size: 16px;
+  /* font-style: bold; */
+  font-variant: normal;
+  /* font-weight: bold; */
+  /* line-height: 24px; */
+  margin-bottom: auto;
+  text-align: center;
+`;
+
+const ByMedipay = styled.h1`
+  font-size: 16px;
   color: #000;
   font-style: normal;
   font-variant: normal;
   font-weight: 400;
   line-height: 24px;
   margin-bottom: auto;
-  text-align: center;
+  margin-right: 60px;
+  text-align: right;
 `;
 
 const Details = styled.h2`
@@ -32,6 +47,7 @@ font-style: normal;
 font-weight: 400;
 line-height: 20px;
 margin-bottom: 0px;
+margin-right: 10px;
 text-align: left;
 `;
 
@@ -60,9 +76,10 @@ const completeDateStamp = hour + ", " + date + ", " + day;
 const DrSingleShop = () => {
   return (
     <Shop>
-      <DrName>Dr. Black Swan</DrName>
-      <AppointmentName>Anticipo de Cita</AppointmentName>
-      <Details>{completeDateStamp}</Details>
+      <DrName>Doctor Black Swan</DrName>
+      {/* <ByMedipay>By Medipay</ByMedipay> */}
+      {/* <AppointmentName>Anticipo de Cita</AppointmentName> */}
+      {/* <Details>{completeDateStamp}</Details> */}
     </Shop>
   );
 };

@@ -10,7 +10,7 @@ const SubmitButton = styled.button`
     props.disabled
       ? "none"
       : "0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #00000;"};
-  border-radius: 4px;
+  border-radius: 26px;
   opacity: ${props => (props.disabled ? 0.5 : 1)};
   color: #fff;
   font-weight: 600;
