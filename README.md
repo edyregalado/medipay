@@ -5,7 +5,7 @@
 ### Getting Started
 
 - clone this repo locally by clicking on "Clone or Download"
-- from a terminal, cd into the project folder `cd react-stripe-js-demo`
+- from a terminal, cd into the project folder
 - install the dependencies `npm install`
 - start developing! `npm run dev`
 
